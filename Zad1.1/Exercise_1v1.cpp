@@ -3,10 +3,18 @@
 #include "Exercise_1v1.hpp"
 using namespace std;
 
+void Exercise_1v1::textInfo(string text){
+    cout << text;
+}
+
+void Exercise_1v1::numberTextInfo(string text, int count) {
+    cout << text << count ;
+}
+
 int Exercise_1v1::setSize(){
     int size;
     
-    cout << "WPROWADZ DANE \n\tPodaj wielkosc tablicy : ";
+    textInfo("WPROWADZ DANE \n\tPodaj wielkosc tablicy : ");
     cin >> size;
     return size;
 }
@@ -18,7 +26,7 @@ int* Exercise_1v1::getEmptyBoxForNumbers(int size){
 }
 
 void Exercise_1v1::putInNumbers(int* boxOfNumbers, int size){
-    cout << "\tPodaj kolejno " << size << " liczb/-y nieujemne odzielone spacja : ";
+    cout << "\tPodaj kolejno " << size << " liczb nieujemnych odzielone spacja bez powtorzeń : ";
     for (int i = 0; i < size; i++) {
         cin >> boxOfNumbers[i];
     }
@@ -32,7 +40,7 @@ int Exercise_1v1::searchForTheBigestOne(int* boxOfNumbers, int size){
             theBigestOfNumbers = boxOfNumbers[i];
         }
     }
-    cout << "\nWYNIKI OBLICZEN\n\tNajwiększa z podanych liczb to : " << theBigestOfNumbers;
+    numberTextInfo("\nWYNIKI OBLICZEN\n\tNajwiększa z podanych liczb to : ", theBigestOfNumbers);
     return theBigestOfNumbers;
 }
 
@@ -44,7 +52,7 @@ int Exercise_1v1::sumRemaining(int* boxOfNumbers,int theBigestOfNumbers, int siz
             totalSum += boxOfNumbers[i];
         }
     }
-    cout << "\n\tSuma pozostalych liczb wynosi : " << totalSum;
+    numberTextInfo("\n\tSuma pozostalych liczb wynosi : ", totalSum);
     return totalSum;
 }
 

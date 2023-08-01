@@ -4,10 +4,13 @@
 #define Exercise_1v1_hpp
 
 #include <iostream>
+#include "Exercise.hpp"
 
-class Exercise_1v1 {
-    
-protected:
+class Exercise_1v1 : public Exercise {
+private:
+     void textInfo(std::string text) override;
+     void numberTextInfo(std::string text , int count) override;
+
     int setSize();
     int* getEmptyBoxForNumbers(int size);
     void putInNumbers(int* boxOfNumbers, int size);

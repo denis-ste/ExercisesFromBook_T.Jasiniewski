@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Exercise_1v1.hpp"
 #include "Exercise_1v2.hpp"
+#include "Exercise_1v3.hpp"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ using namespace std;
 
 int main() {
     
-    Exercise_1v2 a;
+    Exercise_1v3 a;
     a.workIt();
 
  
