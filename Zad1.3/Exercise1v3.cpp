@@ -1,9 +1,9 @@
 
-#include "Exercise_1v3.hpp"
+#include "Exercise1v3.hpp"
 using namespace std;
 
 
-void Exercise_1v3::settingValidNumber(){
+void Exercise1v3::settingValidNumber(){
     int number;
     cout << "WPROWADZ DANE\n\t Będziemy sprawdzać podzielnosc liczby przez 3 oraz 5.\n";
     cout << "\tPodaj dowolna liczbe całkowitą lub wstaw dowolny znak by zakończyć : ";
@@ -12,13 +12,13 @@ void Exercise_1v3::settingValidNumber(){
     }
 }
 
-void Exercise_1v3::checkDivisibility(int number) {
+void Exercise1v3::checkDivisibility(int number) {
     if ( divisibilityByThreeAndFive(number) == false && divisibilityByThreeOrFive(number) == false ) {
         cout << "Liczba nie jest podzielna ani przez 3 ani przez 5\n";
     }
 }
 
-bool Exercise_1v3::divisibilityByThreeAndFive(int number){
+bool Exercise1v3::divisibilityByThreeAndFive(int number){
     if (number % 3 == 0 && number % 5 == 0) {
         cout << "Liczba jest podzielna przez 3 i przez 5\n";
         return true;
@@ -26,7 +26,7 @@ bool Exercise_1v3::divisibilityByThreeAndFive(int number){
     return false;;
 }
 
-bool Exercise_1v3::divisibilityByThreeOrFive(int number) {
+bool Exercise1v3::divisibilityByThreeOrFive(int number) {
     if (number % 3 == 0 && number % 5 != 0) {
         cout << "Liczba jest podzielna przez 3 ale nie przez 5\n";
         return true;
@@ -38,6 +38,6 @@ bool Exercise_1v3::divisibilityByThreeOrFive(int number) {
     else return false;
 }
 
-void Exercise_1v3::workIt(){
+void Exercise1v3::workIt(){
     settingValidNumber();
 }

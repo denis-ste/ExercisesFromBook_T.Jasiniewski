@@ -1,11 +1,11 @@
 
-#ifndef Exercise_1v3_hpp
-#define Exercise_1v3_hpp
+#ifndef Exercise1v3_hpp
+#define Exercise1v3_hpp
 
 #include <iostream>
-#include "Exercise.hpp"
+#include "InheritedFunctions.hpp"
 
-class Exercise_1v3 : public Exercise {
+class Exercise1v3 : public InheritedFunctions {
 private:
     
     void settingValidNumber();
