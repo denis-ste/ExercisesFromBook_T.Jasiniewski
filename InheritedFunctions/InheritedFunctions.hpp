@@ -5,24 +5,27 @@
 
 #include <iostream>
 #include "TaskParameters.hpp"
+#include "Info.hpp"
 
-class InheritedFunctions {
+class InheritedFunctions : public Info  {
+private:
     
 protected:
     
     inline void entranceInfo() {
         std::cout << "WPROWADZ DANE";
     };
+    inline void verticalScreenSpace(){
+        std::cout << "\n\n";
+    };
+    inline void setSizeInfo(){
+        std::cout << "\n\tPodaj wielkosc tablicy : ";
+    };
+  
     
     int setSize();
-    int* getBoxNumbers(const int & size);
+    int* getBoxNumbers(TaskParameters & size);
     
-    struct WrongInputValue {
-        std::string message;
-    };
-    struct WrongFeedbackValue {
-        std::string message;
-    };
     
 };
 

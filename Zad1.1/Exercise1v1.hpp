@@ -5,20 +5,17 @@
 
 #include <iostream>
 #include "InheritedFunctions.hpp"
+#include "Exercise1v1Valid.hpp"
 
-
-class Exercise1v1 : public InheritedFunctions {
+class Exercise1v1 : public InheritedFunctions, public Exercise1v1Valid {
 private:
-
-    
-    void putInNumbers(TaskParameters boxOfNumbersAndSize);
-    int findTheBigestOne(int* boxOfNumbers,int size);
-    int sumRemaining(int* tablica,int theBigestOfNumbers, int size);
-    void displaySumMultiTime(int sumRemaining, int multiTime);
-    
+    void putInNumbers(TaskParameters &);
+    int findBigestOne(TaskParameters &);
+    void setMultitime(TaskParameters &);
+    int sumWithoutBiggestNumer(TaskParameters &);
+    void sumMultiTimeDisplay(const TaskParameters &);
 public:
-    
-    void workIt();
+    void solution ();
 };
 
 #endif

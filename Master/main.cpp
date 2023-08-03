@@ -15,7 +15,7 @@ using namespace std;
 int main() {
     
     Exercise1v1 a;
-    a.workIt();
+    a.solution();
 
  
 }

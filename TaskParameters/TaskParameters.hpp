@@ -7,8 +7,11 @@
 
 class TaskParameters {
 public:
-    int size;
-    int* beginOfBoxNumbers;
+    int size = NULL;
+    int* beginningNumberBox = NULL;
+    int biggestNumber = NULL;
+    int totalSum = NULL;
+    int multiTime = NULL;
 };
 
 #endif /* Parameters_hpp */

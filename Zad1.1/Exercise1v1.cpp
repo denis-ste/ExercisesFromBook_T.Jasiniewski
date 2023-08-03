@@ -3,68 +3,61 @@
 #include "Exercise1v1.hpp"
 using namespace std;
 
-void Exercise1v1::workIt() {
+void Exercise1v1::solution() {
     
     TaskParameters taskParameters;
     
     entranceInfo();
+    setSizeInfo();
     taskParameters.size = setSize();
-    
-    taskParameters.beginOfBoxNumbers =  getBoxNumbers(taskParameters.size);
-    
+    afterSetSizeInfo(taskParameters);
+    taskParameters.beginningNumberBox = getBoxNumbers(taskParameters);
     putInNumbers(taskParameters);
-    
-    
-    int theBigestOfNumber = findTheBigestOne(taskParameters.beginOfBoxNumbers,
-                                             taskParameters.size);
-    int sumRemainingvar = sumRemaining(taskParameters.beginOfBoxNumbers,
-                                       theBigestOfNumber,  taskParameters.size);
-    
-    displaySumMultiTime(sumRemainingvar, theBigestOfNumber);
-    
-    cout << "\n\n\n";
-    delete [] taskParameters.beginOfBoxNumbers;
+    taskParameters.biggestNumber = findBigestOne(taskParameters);
+    findBigestOneInfo(taskParameters);
+    taskParameters.totalSum = sumWithoutBiggestNumer(taskParameters);
+    setMultitime(taskParameters);
+    sumMultiTimeDisplayInfo(taskParameters);
+    sumMultiTimeDisplay(taskParameters);
+    verticalScreenSpace();
+    delete [] taskParameters.beginningNumberBox;
 }
 
-void Exercise1v1::putInNumbers(TaskParameters taskParameters){
-    cout << "\tPodaj kolejno " << taskParameters.size << " liczb nieujemnych odzielone spacja bez powtorzeń : ";
+void Exercise1v1::putInNumbers(TaskParameters & taskParameters){
     //try
     for (int i = 0; i < taskParameters.size; i++) {
-        cin >> taskParameters.beginOfBoxNumbers[i];
-        // checkRecurNmber(boxOfNumbers, size, i);
+        cin >> taskParameters.beginningNumberBox[i];
+        checkRecurNumber(taskParameters , i);
     }
 }
 
-int Exercise1v1::findTheBigestOne(int* boxOfNumbers, int size){
-    int theBigestOfNumbers = 0;
+int Exercise1v1::findBigestOne(TaskParameters & taskParameters){
 
-    for (int i = 0; i < size; i++) {
-        if (theBigestOfNumbers < boxOfNumbers[i]) {
-            theBigestOfNumbers = boxOfNumbers[i];
+    for (int i = 0; i < taskParameters.size; i++) {
+        if (taskParameters.biggestNumber < taskParameters.beginningNumberBox[i]) {
+            taskParameters.biggestNumber = taskParameters.beginningNumberBox[i];
         }
     }
-    cout << "\nWYNIKI OBLICZEN\n\tNajwiększa z podanych liczb to : " << theBigestOfNumbers;
-    return theBigestOfNumbers;
+    return taskParameters.biggestNumber;
 }
 
-int Exercise1v1::sumRemaining(int* boxOfNumbers,int theBigestOfNumbers, int size){
-    int totalSum = 0;
+void Exercise1v1::setMultitime(TaskParameters & taskParameters){
+    taskParameters.multiTime = taskParameters.biggestNumber;
+};
+
+int Exercise1v1::sumWithoutBiggestNumer(TaskParameters & taskParameters){
     
-    for (int i = 0; i < size; i++){
-        if (boxOfNumbers[i] != theBigestOfNumbers) {
-            totalSum += boxOfNumbers[i];
+    for (int i = 0; i < taskParameters.size; i++){
+        if (taskParameters.beginningNumberBox[i] != taskParameters.biggestNumber) {
+            taskParameters.totalSum += taskParameters.beginningNumberBox[i];
         }
     }
-    cout << "\n\tSuma pozostalych liczb wynosi : " << totalSum;
-    return totalSum;
+    return taskParameters.totalSum;
 }
 
-void Exercise1v1::displaySumMultiTime(int sumRemaining , int theBigestOfNumbers){
-    int multiTime = theBigestOfNumbers;
-    cout << "\n\tWyswietlam " << theBigestOfNumbers << "-razy sume pozostalych liczb : ";
-    
-    for (int i = 0; i < multiTime; i++){
-        cout << sumRemaining << ", ";
+void Exercise1v1::sumMultiTimeDisplay(const TaskParameters & taskParameters){
+    for (int i = 0; i < taskParameters.multiTime; i++){
+        cout << taskParameters.totalSum << ", ";
     }
 }
 
