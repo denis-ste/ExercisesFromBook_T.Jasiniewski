@@ -5,9 +5,9 @@
 
 #include <iostream>
 #include <vector>
-#include "InheritedFunctions.hpp"
+#include "Functions.hpp"
 
-class Exercise1v2 : public InheritedFunctions {
+class Exercise1v2 : public Functions {
 private:
     //void inline textInfo(std::string text) override;
     void setValidNumberAndCheckEven() ;

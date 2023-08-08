@@ -3,9 +3,9 @@
 #define Exercise1v3_hpp
 
 #include <iostream>
-#include "InheritedFunctions.hpp"
+#include "Functions.hpp"
 
-class Exercise1v3 : public InheritedFunctions {
+class Exercise1v3 : public Functions {
 private:
     
     void settingValidNumber();

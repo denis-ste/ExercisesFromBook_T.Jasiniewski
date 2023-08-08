@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "Exercise1v1.hpp"
+#include "Task1v1.hpp"
 #include "Exercise1v2.hpp"
 #include "Exercise1v3.hpp"
 
@@ -14,10 +14,8 @@ using namespace std;
 
 int main() {
     
-    Exercise1v1 a;
+    Task1v1 a;
     a.solution();
-
- 
 }
 
 
