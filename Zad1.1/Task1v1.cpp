@@ -29,10 +29,16 @@ void Task1v1::putInNumbers(Parameters & param){
         try{
             containsChar(param);
             fillInNumber(param);
+            isContainerFull(param);
             containsDuplicate(param.numbersBox);
         }
         catch(WrongValue value){
             value.info();
+            continue;
+        }
+        catch(NotFull value){
+            value.info();
+            param.numbersBox.clear();
             continue;
         }
         catch(DuplicateValue value){
@@ -54,12 +60,14 @@ void Task1v1::setMultitime(Parameters & param){
     param.multiTime = param.biggestNumber;
 };
 void Task1v1::sumWithoutBiggestNumer(Parameters & param){
-    for (int i = 0; i < param.size; i++){
-        if (param.numbersBox[i] != param.biggestNumber) {
-            param.totalSum += param.numbersBox[i];
+    for (auto x : param.numbersBox){
+        if (x != param.numbersBox.back()) {
+            param.totalSum += x;
         }
     }
 }
+
+
 
 
 
